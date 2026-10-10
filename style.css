@@ -1,0 +1,193 @@
+/* A birthday card, a little film, and a sealed letter. */
+:root {
+  color-scheme: light;
+  --paper: #f7f4ec;
+  --letter-paper: #fdfbf5;
+  --ink: #3c3431;
+  --muted: #76665f;
+  --accent: #782b3b;
+  --accent-dark: #5b1d2b;
+  --accent-soft: #d9b7ba;
+  --line: #ded5cc;
+  --masthead-height: 78px;
+  --footer-height: 64px;
+  --serif: "Iowan Old Style", "Baskerville", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --chinese: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "PingFang SC", "Microsoft YaHei", serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%236b6047' opacity='.035' filter='url(%23paper)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+[hidden] { display: none !important; }
+::selection { background: #ead5d7; color: #54202d; }
+a { color: inherit; text-underline-offset: 5px; }
+a, button, video { -webkit-tap-highlight-color: rgba(120, 43, 59, .12); }
+a:focus-visible, button:focus-visible, video:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 2px; }
+button { font: inherit; }
+h1, h2, p { margin: 0; }
+h1, h2 { font-family: var(--serif); font-weight: 400; }
+svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.section-width { width: min(100% - 40px, 880px); margin-inline: auto; }
+.eyebrow { color: var(--muted); font-size: 10px; line-height: 1.6; letter-spacing: .19em; text-transform: uppercase; }
+.chapter-number { margin-right: 12px; padding-right: 14px; border-right: 1px solid var(--line); letter-spacing: .08em; }
+.skip-link { position: fixed; left: 16px; top: 12px; z-index: 20; padding: 12px 18px; background: var(--letter-paper); transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.masthead { width: calc(100% - 40px); max-width: 1376px; margin: 0 auto; min-height: var(--masthead-height); padding-top: env(safe-area-inset-top, 0px); display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); }
+.wordmark { font-family: var(--serif); font-style: italic; font-size: 19px; text-decoration: none; letter-spacing: -.04em; }
+.wordmark span { color: var(--accent); }
+.masthead-note { color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .15em; text-align: right; }
+.site-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; width: calc(100% - 40px); max-width: 1376px; min-height: var(--footer-height); margin: 0 auto; padding: 17px 0 max(17px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 12px; line-height: 1.6; }
+.primary-button { display: inline-flex; justify-content: center; align-items: center; gap: 26px; min-height: 52px; padding: 0 24px; color: var(--letter-paper); background: var(--accent); border: 1px solid var(--accent); text-decoration: none; font-size: 12px; letter-spacing: .035em; transition: background-color 180ms, border-color 180ms; }
+.primary-button:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.primary-button svg { width: 18px; height: 18px; }
+.quiet-link, .back-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; color: var(--muted); font-size: 11px; text-decoration: none; line-height: 1.6; }
+.quiet-link:hover, .back-link:hover { color: var(--accent); }
+
+/* The greeting is its own quiet, complete screen. */
+.opening { min-height: calc(100vh - var(--masthead-height) - var(--footer-height)); min-height: calc(100svh - var(--masthead-height) - var(--footer-height)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 58px 20px 28px; }
+.opening-inner { margin-block: auto; }
+.opening-eyebrow { margin-bottom: 32px; }
+.opening h1 { font-size: clamp(49px, 8.4vw, 106px); line-height: 1.04; letter-spacing: -.048em; }
+.opening h1 em { color: var(--accent); font-weight: 400; }
+.opening-subtitle { margin-top: 28px; font-family: var(--serif); font-size: 17px; line-height: 1.6; color: var(--muted); }
+.opening-cta { margin-top: 37px; }
+.opening-footnote { display: flex; align-items: center; gap: 10px; margin-top: 57px; color: var(--muted); font-size: 9px; letter-spacing: .05em; }
+.opening-footnote span { display: block; width: 17px; height: 1px; background: var(--accent-soft); }
+
+/* The real film is portrait. Metadata adapts the frame to replacement videos. */
+.film-page { text-align: center; padding-top: 29px; padding-bottom: 20px; min-height: calc(100svh - var(--masthead-height) - var(--footer-height)); }
+.chapter-heading { text-align: center; }
+.chapter-title { margin-top: 13px; font-size: clamp(31px, 4vw, 43px); line-height: 1.2; letter-spacing: -.035em; }
+.section-description { margin-top: 9px; font-family: var(--serif); font-size: 15px; color: var(--muted); line-height: 1.6; }
+.film-shell { --film-ratio: .5625; width: min(100%, 360px, calc(50svh * var(--film-ratio))); margin: 24px auto 0; padding: 6px; background: var(--letter-paper); border: 1px solid var(--line); box-shadow: 0 6px 20px -16px rgba(55, 31, 31, .2); }
+.film-shell.is-landscape { width: min(100%, 740px, calc(50svh * var(--film-ratio))); }
+.film-frame { position: relative; aspect-ratio: var(--film-ratio); overflow: hidden; background: #3c2028; }
+.film-frame video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; background: #211b1d; }
+.film-placeholder { position: absolute; inset: 0; }
+.film-cover { display: block; width: 100%; height: 100%; object-fit: cover; }
+.film-cover-copy { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #f7efdf; padding: 18px 10px 40px; }
+.film-cover-eyebrow { font-size: 8px; line-height: 1.6; text-transform: uppercase; letter-spacing: .17em; color: #e6d0c9; }
+.film-cover-copy > p { margin-top: 20px; font-family: var(--serif); font-size: clamp(35px, 8vw, 63px); font-style: italic; line-height: 1.1; letter-spacing: -.045em; }
+.film-cover-rule { width: 25px; height: 1px; margin-top: 24px; background: #cc999b; }
+.film-cover-signoff { margin-top: 21px; font-family: var(--serif); font-style: italic; font-size: 14px; color: #e6d0c9; }
+.film-status { position: absolute; left: 14px; right: 14px; bottom: 24px; color: #e6d0c9; font-size: 10px; line-height: 1.6; }
+.film-caption { display: flex; justify-content: space-between; align-items: center; gap: 9px; padding: 10px 2px 4px; color: var(--muted); font-size: 9px; line-height: 1.5; text-align: left; }
+.film-caption > :last-child { text-align: right; white-space: nowrap; }
+.playback-help { margin: 14px auto 0; max-width: 420px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.film-invitation { min-height: 136px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding-top: 21px; }
+.film-next-note { font-family: var(--serif); font-style: italic; color: var(--muted); font-size: 16px; line-height: 1.6; text-wrap: balance; }
+.film-invitation.is-ready .film-next-note { font-size: 21px; color: var(--ink); max-width: 380px; }
+.film-invitation.is-ready { margin-top: 7px; padding-bottom: 11px; }
+
+/* An actual button wrapped around a paper envelope, with a small wax seal. */
+.envelope-scene { min-height: calc(100svh - var(--masthead-height) - var(--footer-height)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-block: 42px 24px; }
+.envelope-title { margin-top: 22px; font-size: clamp(41px, 5.5vw, 66px); line-height: 1.1; letter-spacing: -.035em; }
+.envelope-title em { color: var(--accent); font-weight: 400; }
+.envelope-button { display: block; width: min(100%, 330px); margin-top: 13px; border: none; padding: 0; background: transparent; color: var(--accent); cursor: pointer; touch-action: manipulation; }
+.envelope-space { display: block; position: relative; padding-top: 48px; padding-bottom: 24px; }
+.envelope { display: block; position: relative; width: 100%; aspect-ratio: 3 / 2; perspective: 1100px; filter: drop-shadow(0 12px 13px rgba(78, 46, 36, .12)); }
+.envelope-back { position: absolute; inset: 0; background: #deccb8; border: 1px solid #d6c5b3; border-radius: 3px; }
+.envelope-insert { position: absolute; top: 7%; left: 6%; width: 88%; height: 86%; padding: 24px; text-align: left; background: var(--letter-paper); border: 1px solid #e8dfd2; transition: transform 650ms 180ms cubic-bezier(.2,.65,.3,1); }
+.insert-greeting { display: block; font: italic 26px var(--serif); color: var(--accent); margin-bottom: 18px; }
+.insert-line { display: block; width: 100%; height: 1px; background: #e7dfd2; margin-top: 13px; }
+.insert-line.short { width: 70%; }
+.envelope-front { position: absolute; inset: 0; z-index: 2; clip-path: polygon(0 0, 50% 57%, 100% 0, 100% 100%, 0 100%); background: linear-gradient(100deg, #ecdeca, #f4e8d6 48%, #ecdeca); border: 1px solid #d5c3ad; border-radius: 3px; }
+.envelope-front::after { content: ""; position: absolute; inset: 0; clip-path: polygon(0 100%, 50% 32%, 100% 100%); background: linear-gradient(0deg, #efe2cf, #f5ead9); }
+.envelope-flap { position: absolute; top: 0; left: 0; width: 100%; height: 62%; z-index: 3; clip-path: polygon(0 0, 100% 0, 50% 100%); background: linear-gradient(180deg, #efe2d0, #e5d4bc); transform-origin: center top; backface-visibility: hidden; transition: transform 620ms cubic-bezier(.25,.1,.25,1); }
+.envelope-seal { position: absolute; z-index: 4; top: 52%; left: 50%; width: 49px; height: 49px; display: flex; align-items: center; justify-content: center; border-radius: 47% 50% 45% 49%; transform: translate(-50%, -50%) rotate(-7deg); background: linear-gradient(135deg, #933f50, #742b3b 55%, #5c1e2b); color: #f9e9df; font: italic 13px var(--serif); box-shadow: 0 3px 5px rgba(69, 24, 30, .2), inset 0 0 0 2px rgba(185, 103, 112, .24); transition: opacity 220ms, transform 250ms; }
+.envelope-seal::before { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(227, 165, 163, .35); border-radius: 50%; }
+.envelope-action { display: inline-flex; align-items: center; gap: 18px; min-height: 44px; font-size: 12px; letter-spacing: .05em; border-bottom: 1px solid var(--accent-soft); }
+.envelope-action svg { width: 17px; height: 17px; }
+.envelope-button:hover .envelope-action { border-color: var(--accent); }
+.envelope-button:disabled { cursor: default; }
+.envelope-button.is-opening .envelope-flap { transform: rotateX(180deg); }
+.envelope-button.is-opening .envelope-seal { opacity: 0; transform: translate(-50%, -60%) rotate(-7deg); }
+.envelope-button.is-opening .envelope-insert { transform: translateY(-49%); }
+.envelope-button.is-opening .envelope-action { opacity: .5; }
+.envelope-note { margin-top: 14px; color: var(--muted); font: italic 14px/1.6 var(--serif); }
+.envelope-scene > .back-link { margin-top: 23px; }
+
+/* Reading is still, spacious, and independent of the envelope animation. */
+.letter-reading { padding-top: 32px; }
+.letter-section { max-width: 740px; }
+.letter-paper { position: relative; padding: 41px 27px 46px; background-color: var(--letter-paper); border: 1px solid var(--line); box-shadow: 0 12px 38px -26px rgba(64, 32, 32, .18); }
+.letter-paper::before { content: ""; position: absolute; inset: 7px; border: 1px solid #eee5db; pointer-events: none; }
+.letter-heading { margin-bottom: 32px; }
+.letter-heading .eyebrow { font-size: 9px; letter-spacing: .13em; }
+.letter-heading h2 { margin-top: 24px; font-size: 37px; line-height: 1.25; font-style: italic; color: var(--accent); }
+.letter-heading h2:focus { outline: none; }
+.letter-heading-rule { display: block; width: 34px; height: 1px; background: var(--accent-soft); margin-top: 23px; }
+.letter-content { font-family: var(--chinese); font-size: 17px; line-height: 2.05; font-weight: 400; letter-spacing: .025em; overflow-wrap: break-word; line-break: strict; }
+.letter-content p + p { margin-top: 24px; }
+.letter-content .letter-english { font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.6; letter-spacing: -.01em; margin-top: 36px; }
+.letter-content .letter-signature { margin-top: 39px; color: var(--accent); font-size: 19px; }
+.ending { padding: 78px 0 67px; text-align: center; }
+.ending-rule { display: block; margin: 0 auto 35px; width: 1px; height: 47px; background: var(--accent-soft); }
+.ending h2 { margin-top: 27px; font-size: clamp(59px, 8vw, 89px); line-height: 1.02; letter-spacing: -.045em; }
+.ending h2 em { font-weight: 400; color: var(--accent); }
+.ending-subtitle { margin-top: 28px; color: var(--muted); font-family: var(--serif); font-size: 17px; line-height: 1.6; }
+.ending-signoff { margin-top: 34px; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+.back-to-start { display: inline-flex; gap: 12px; align-items: center; min-height: 44px; margin-top: 53px; font-size: 11px; letter-spacing: .03em; color: var(--muted); text-decoration: none; }
+.back-to-start:hover { color: var(--accent); }
+
+@media (min-width: 600px) {
+  :root { --masthead-height: 95px; --footer-height: 69px; }
+  .section-width { width: min(100% - 88px, 880px); }
+  .masthead, .site-footer { width: calc(100% - 88px); }
+  .wordmark { font-size: 23px; }
+  .masthead-note { font-size: 10px; }
+  .opening { padding-top: 66px; padding-bottom: 32px; }
+  .opening-eyebrow { margin-bottom: 36px; }
+  .opening-subtitle { font-size: 19px; margin-top: 32px; }
+  .opening-footnote { font-size: 10px; }
+  .film-page { padding-top: 31px; }
+  .film-shell { margin-top: 27px; }
+  .film-caption { font-size: 10px; }
+  .envelope-scene { padding-top: 45px; }
+  .envelope-button { width: 360px; }
+  .letter-paper { padding: 60px 65px 63px; }
+  .letter-heading { margin-bottom: 38px; }
+  .letter-heading .eyebrow { font-size: 10px; }
+  .letter-heading h2 { font-size: 42px; }
+  .letter-content { font-size: 18px; line-height: 2.1; }
+  .letter-content p + p { margin-top: 28px; }
+  .letter-content .letter-english { font-size: 24px; }
+  .ending { padding-top: 97px; padding-bottom: 87px; }
+}
+@media (min-width: 1200px) { .masthead, .site-footer { width: calc(100% - 128px); } }
+@media (max-width: 359px) {
+  .masthead-note { max-width: 66px; line-height: 1.7; }
+  .opening { padding-inline: 16px; }
+  .opening h1 { font-size: 42px; }
+  .opening-subtitle { font-size: 16px; }
+  .letter-paper { padding-inline: 23px; }
+  .envelope-title { font-size: 39px; }
+  .envelope-seal { width: 45px; height: 45px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .opening-inner { animation: arrive 800ms both; }
+  .letter-reading.is-arriving { animation: arrive 400ms both; }
+  @keyframes arrive { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+@media print {
+  body { background: white; color: black; }
+  .masthead, .opening, .film-page, .envelope-scene, .site-footer, .back-to-start, .skip-link { display: none !important; }
+  .letter-reading[hidden] { display: block !important; }
+  .letter-section { width: 100%; max-width: none; }
+  .letter-paper { background: white; border: none; box-shadow: none; padding: 20px; }
+  .letter-paper::before { display: none; }
+  .letter-content { font-size: 12pt; line-height: 1.8; }
+  .letter-content p { orphans: 3; widows: 3; }
+  .ending { padding: 40px 0 0; break-inside: avoid; }
+  .ending h2 { font-size: 38pt; }
+}

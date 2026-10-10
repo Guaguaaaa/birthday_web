@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <radialGradient id="light" cx=".38" cy=".25" r=".95">
+      <stop offset="0" stop-color="#8b4d56"/>
+      <stop offset=".57" stop-color="#682b3b"/>
+      <stop offset="1" stop-color="#42202a"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#light)" d="M0 0h1600v1000H0z"/>
+  <path d="M29 29h1542v942H29z" fill="none" stroke="#e6d0c9" stroke-opacity=".25"/>
+  <path d="M39 39h1522v922H39z" fill="none" stroke="#e6d0c9" stroke-opacity=".1"/>
+  <text x="800" y="525" text-anchor="middle" fill="#f7efdf" font-family="Iowan Old Style, Baskerville, Georgia, serif" font-style="italic" font-size="170" letter-spacing="-5">You &amp; me.</text>
+  <path d="M770 605h60" stroke="#cc999b"/>
+</svg>

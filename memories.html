@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f7f4ec">
+    <meta name="description" content="A birthday keepsake, made with love.">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <title>Our Little Film — Happily Ever After</title>
+    <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css?v=3">
+    <script src="script.js?v=3" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the main content</a>
+    <header class="masthead">
+      <a class="wordmark" href="index.html" aria-label="Happily Ever After, back to the beginning">Happily Ever After<span aria-hidden="true">.</span></a>
+      <span class="masthead-note">A birthday keepsake</span>
+    </header>
+    <main id="main" class="film-page section-width">
+      <header class="chapter-heading">
+        <p class="eyebrow"><span class="chapter-number">01</span> The memories</p>
+        <h1 class="chapter-title" id="memories-title">A little piece of us.</h1>
+        <p class="section-description">Our days together, in one little film.</p>
+      </header>
+      <section aria-labelledby="memories-title">
+        <div class="film-shell" id="film-shell">
+          <div class="film-frame" id="film-frame">
+            <video id="birthday-video" controls playsinline preload="metadata" poster="assets/poster.svg?v=2" aria-label="Our birthday memory film" aria-describedby="film-caption">
+              <source id="birthday-source" src="assets/birthday.mp4?v=2" type="video/mp4">
+              Your browser cannot play this video. <a href="assets/birthday.mp4?v=2">Open the birthday film</a>.
+            </video>
+            <div class="film-placeholder" id="film-placeholder" hidden>
+              <img class="film-cover" src="assets/cover.svg?v=2" alt="" width="1600" height="1000">
+              <div class="film-cover-copy">
+                <span class="film-cover-eyebrow">A collection of our days</span>
+                <p>You &amp; me.</p>
+                <span class="film-cover-rule" aria-hidden="true"></span>
+                <span class="film-cover-signoff">and all the little things.</span>
+              </div>
+              <p class="film-status" id="film-status" role="status">Our memories will be here soon.</p>
+            </div>
+          </div>
+          <div class="film-caption" id="film-caption"><span>A little film, made with love.</span><span id="film-duration">01:07</span></div>
+        </div>
+        <p class="playback-help" id="playback-help" hidden>Having trouble playing? <a href="assets/birthday.mp4?v=2">Open the film directly</a>, or continue to the letter.</p>
+      </section>
+      <div class="film-invitation" aria-live="polite">
+        <p class="film-next-note" id="film-next-note">Press play. Take your time.</p>
+        <!-- Visible without JavaScript; enhanced playback reveals this on end. -->
+        <a class="primary-button" id="film-next" href="letter.html">
+          A letter for you
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-5-5 5 5-5 5"/></svg>
+        </a>
+        <a class="quiet-link" id="skip-film" href="letter.html" hidden>Go straight to my letter</a>
+      </div>
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Back to your birthday greeting</a>
+    </main>
+    <footer class="site-footer"><span>Made for you.</span><span>With all my love.</span></footer>
+  </body>
+</html>
