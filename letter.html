@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -8,22 +8,13 @@
     <meta name="robots" content="noindex, nofollow, noarchive">
     <title>A Letter for You — Happily Ever After</title>
     <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
-    <link rel="stylesheet" href="style.css?v=4">
-    <script src="script.js?v=4" defer></script>
+    <link rel="stylesheet" href="style.css?v=5">
+    <script src="script.js?v=5" defer></script>
   </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to the main content</a>
-    <header class="masthead">
-      <a class="wordmark" href="index.html" aria-label="Happily Ever After, back to the beginning"><span aria-hidden="true">♡</span> Happily Ever After</a>
-      <span class="masthead-note" lang="zh-Hans">给悦悦，满满的爱</span>
-    </header>
+  <body class="letter-page">
     <main id="main">
-      <section class="envelope-scene section-width" id="envelope-scene" aria-labelledby="envelope-title" hidden>
-        <header class="chapter-heading">
-          <p class="eyebrow handwritten">a little love letter</p>
-          <h1 class="envelope-title" id="envelope-title" lang="zh-Hans">有些话，<br><em>只想说给你听。</em></h1>
-        </header>
-        <button class="envelope-button" id="open-envelope" type="button" lang="zh-Hans" aria-controls="letter-reading" aria-expanded="false">
+      <section class="envelope-scene section-width" id="envelope-scene" aria-label="给宝贝的信封" hidden>
+        <button class="envelope-button" id="open-envelope" type="button" aria-label="拆开信封" aria-controls="letter-reading" aria-expanded="false">
           <span class="envelope-space" aria-hidden="true">
             <span class="envelope">
               <span class="envelope-back"></span>
@@ -34,25 +25,15 @@
               <span class="envelope-seal">♡</span>
             </span>
           </span>
-          <span class="envelope-action" lang="zh-Hans">拆开这封小情书 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20S3 14.7 3 8.7C3 3.8 9.5 2.8 12 7c2.5-4.2 9-3.2 9 1.7C21 14.7 12 20 12 20Z"/></svg></span>
         </button>
-        <p class="envelope-note" lang="zh-Hans">轻轻点一下，里面都是我的心里话。</p>
         <p class="sr-only" id="envelope-status" role="status" lang="zh-Hans"></p>
-        <a class="back-link" href="memories.html" lang="zh-Hans"><span aria-hidden="true">←</span> 回去再看一遍我们</a>
       </section>
       <div id="letter-reading" class="letter-reading">
       <section class="letter-section section-width" id="letter" aria-labelledby="letter-title">
         <article class="letter-paper">
-          <header class="letter-heading">
-            <span class="letter-stamp" aria-hidden="true">with<br>love ♡</span>
-            <span class="eyebrow" lang="zh-Hans">写给我最爱的宝贝</span>
-            <h2 id="letter-title" tabindex="-1">My love,</h2>
-            <span class="letter-heading-rule" aria-hidden="true">♡</span>
-          </header>
-
           <!-- LOVE LETTER START: edit only the paragraphs in this block. -->
           <div class="letter-content" lang="zh-Hans">
-            <p>生日快乐，我最爱的宝贝！❤️</p>
+            <p id="letter-title" tabindex="-1">生日快乐，我最爱的宝贝！❤️</p>
 
             <p>不知不觉，我们已经在一起快半年啦。</p>
 
@@ -97,17 +78,7 @@
           <!-- LOVE LETTER END -->
         </article>
       </section>
-
-      <section class="ending section-width" id="ending" aria-labelledby="ending-title">
-        <img class="ending-bow" src="assets/bow.svg" width="100" height="67" alt="">
-        <p class="eyebrow" lang="zh-Hans">好多好多的春夏秋冬，都想和你一起</p>
-        <h2 id="ending-title">Happily<br><em>Ever After.</em></h2>
-        <p class="ending-subtitle">Our story doesn’t end here.</p>
-        <p class="ending-signoff">you + me, always ♡</p>
-        <a class="back-to-start" href="index.html" lang="zh-Hans">再打开一次这份小惊喜 <span aria-hidden="true">↩</span></a>
-      </section>
       </div>
     </main>
-    <footer class="site-footer"><span>Made just for you.</span><span>With all my love ♡</span></footer>
   </body>
 </html>

@@ -51,9 +51,6 @@ svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.5; stroke
 .primary-button { display: inline-flex; justify-content: center; align-items: center; gap: 17px; min-height: 50px; padding: 12px 24px; border: 1px solid var(--accent); border-radius: 999px; background: var(--accent); color: var(--letter-paper); box-shadow: 0 4px 0 #67293a18, inset 0 0 0 3px #f5c8d015; text-decoration: none; font-size: 14px; line-height: 1.6; letter-spacing: .03em; transition: background-color 180ms, transform 180ms; }
 .primary-button:hover { background: var(--accent-dark); transform: translateY(-2px); }
 .primary-button svg { width: 18px; height: 18px; flex-shrink: 0; }
-.quiet-link, .back-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; color: var(--muted); font-size: 12px; text-decoration: none; line-height: 1.6; }
-.quiet-link { text-decoration: underline; text-decoration-color: var(--accent-soft); text-decoration-style: dotted; }
-.quiet-link:hover, .back-link:hover { color: var(--accent); }
 .paper-tape { position: absolute; display: block; z-index: 3; width: 104px; height: 26px; background-color: #e6b1be; background-image: linear-gradient(90deg, #fff6ed55 50%, transparent 50%), linear-gradient(#fff6ed55 50%, transparent 50%); background-size: 12px 12px; opacity: .84; clip-path: polygon(2% 0, 98% 0, 100% 16%, 98% 30%, 100% 52%, 98% 68%, 100% 86%, 98% 100%, 1% 100%, 3% 83%, 0 68%, 2% 49%, 0 30%, 3% 16%); pointer-events: none; }
 
 /* The first page is a birthday card, held down with pink paper tape. */
@@ -79,8 +76,8 @@ svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.5; stroke
 .chapter-heading { text-align: center; }
 .chapter-title { margin-top: 6px; font-family: var(--chinese); font-size: clamp(29px, 4vw, 38px); line-height: 1.4; letter-spacing: .015em; }
 .section-description { margin-top: 7px; font-family: var(--chinese); font-size: 13px; color: var(--muted); line-height: 1.7; }
-.film-shell { --film-ratio: .5625; position: relative; width: min(100%, 360px, calc(48svh * var(--film-ratio))); margin: 26px auto 0; padding: 8px; background: var(--letter-paper); border: 1px solid #ead7cf; border-radius: 3px; box-shadow: 3px 4px 0 #efd8d640, 0 8px 22px #7535450b; transform: rotate(-.7deg); }
-.film-shell.is-landscape { width: min(100%, 740px, calc(48svh * var(--film-ratio))); }
+.film-shell { --film-ratio: .5625; position: relative; width: min(100%, 440px, calc(62svh * var(--film-ratio))); margin: 26px auto 0; padding: 8px; background: var(--letter-paper); border: 1px solid #ead7cf; border-radius: 3px; box-shadow: 3px 4px 0 #efd8d640, 0 8px 22px #7535450b; transform: rotate(-.7deg); }
+.film-shell.is-landscape { width: min(100%, 740px, calc(62svh * var(--film-ratio))); }
 .film-tape { width: 86px; height: 22px; top: -13px; left: calc(50% - 43px); transform: rotate(4deg); }
 .film-frame { position: relative; aspect-ratio: var(--film-ratio); overflow: hidden; border-radius: 2px; background: #3c2028; }
 .film-frame video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; background: #211b1d; }
@@ -95,18 +92,17 @@ svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.5; stroke
 .film-caption { display: flex; justify-content: space-between; align-items: center; gap: 7px; padding: 13px 1px 6px; color: var(--accent); font-family: var(--hand); font-size: 15px; line-height: 1.25; text-align: left; }
 .film-caption > :last-child { text-align: right; white-space: nowrap; font-family: var(--sans); color: var(--muted); font-size: 9px; }
 .playback-help { margin: 14px auto 0; max-width: 420px; color: var(--muted); font-size: 13px; line-height: 1.8; }
-.film-invitation { min-height: 124px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; padding-top: 16px; }
+.film-invitation { min-height: 72px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; padding-top: 16px; }
 .film-next-note { font-family: var(--chinese); color: var(--muted); font-size: 13px; line-height: 1.7; text-wrap: balance; }
-.film-invitation.is-ready .film-next-note { font-size: 14px; color: var(--accent); max-width: 380px; }
+.film-letter-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 4px; color: var(--accent); font-family: var(--chinese); font-size: 15px; line-height: 1.7; text-decoration-style: dotted; text-decoration-color: var(--accent-soft); text-underline-offset: 7px; }
+.film-letter-link:hover { color: var(--accent-dark); text-decoration-color: var(--accent); }
 .film-invitation.is-ready { padding-bottom: 10px; }
 
 /* A blush envelope, a heart seal, and words saved just for her. */
-.envelope-scene { min-height: calc(100svh - var(--masthead-height) - var(--footer-height)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-block: 28px 20px; }
-.envelope-title { margin-top: 12px; font-family: var(--chinese); font-size: clamp(31px, 4.5vw, 46px); line-height: 1.55; letter-spacing: .015em; }
-.envelope-title em { color: var(--accent); font-style: normal; font-weight: 400; }
-.envelope-button { display: block; width: min(100% - 18px, 330px); margin-top: 2px; border: none; padding: 0; background: transparent; color: var(--accent); cursor: pointer; touch-action: manipulation; transform: rotate(-3deg); transition: transform 250ms; }
+.envelope-scene { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-block: 24px; }
+.envelope-button { display: block; width: min(100% - 18px, 330px); margin: 0; border: none; padding: 0; background: transparent; color: var(--accent); cursor: pointer; touch-action: manipulation; transform: rotate(-3deg); transition: transform 250ms; }
 .envelope-button:hover { transform: rotate(-1deg); }
-.envelope-space { display: block; position: relative; padding-top: 52px; padding-bottom: 28px; }
+.envelope-space { display: block; position: relative; padding-block: 48px; }
 .envelope { display: block; position: relative; width: 100%; aspect-ratio: 3 / 2; perspective: 1100px; filter: drop-shadow(0 12px 13px #7535451c); }
 .envelope-back { position: absolute; inset: 0; background: #e8c1c0; border: 1px solid #d9adb3; border-radius: 5px; }
 .envelope-insert { position: absolute; top: 7%; left: 6%; width: 88%; height: 86%; padding: 24px; text-align: left; background: var(--letter-paper); border: 1px solid #e8dfd2; transition: transform 650ms 180ms cubic-bezier(.2,.65,.3,1); }
@@ -119,41 +115,20 @@ svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.5; stroke
 .envelope-address { position: absolute; z-index: 3; left: 23px; bottom: 21px; color: #8b535d; font-family: var(--chinese); font-size: 14px; letter-spacing: .025em; }
 .envelope-seal { position: absolute; z-index: 4; top: 52%; left: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 47% 50% 45% 49%; transform: translate(-50%, -50%) rotate(-7deg); background: linear-gradient(135deg, #a44f64, #832f46 55%, #622239); color: #f9e9df; font: 36px/1 var(--serif); box-shadow: 0 3px 5px #45181e33, inset 0 0 0 2px #b9677040; transition: opacity 220ms, transform 250ms; }
 .envelope-seal::before { content: ""; position: absolute; inset: 5px; border: 1px solid #e3a5a359; border-radius: 50%; }
-.envelope-action { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 48px; padding: 9px 23px; font-size: 14px; line-height: 1.6; letter-spacing: .03em; border: 1px dashed #c995a4; border-radius: 999px; background: #fffdf88c; transform: rotate(3deg); }
-.envelope-action svg { width: 17px; height: 17px; }
-.envelope-button:hover .envelope-action { background: var(--letter-paper); }
 .envelope-button:disabled { cursor: default; }
 .envelope-button.is-opening .envelope-flap { transform: rotateX(180deg); }
 .envelope-button.is-opening .envelope-seal { opacity: 0; transform: translate(-50%, -60%) rotate(-7deg); }
 .envelope-button.is-opening .envelope-insert { transform: translateY(-49%); }
-.envelope-button.is-opening .envelope-action { opacity: .5; }
-.envelope-note { margin-top: 17px; color: var(--muted); font: 13px/1.8 var(--chinese); }
-.envelope-scene > .back-link { margin-top: 17px; }
 
 /* The letter stays still and readable, on a page of our own stationery. */
-.letter-reading { padding-top: 35px; }
+.letter-reading { min-height: 100svh; padding: 35px 0 40px; }
 .letter-section { max-width: 740px; }
 .letter-paper { position: relative; padding: 38px 27px 46px; background-color: var(--letter-paper); border: 1px solid #ead7cf; border-radius: 5px 7px 4px 6px; box-shadow: 4px 5px 0 #efd8d680, 0 12px 38px -26px #7535452e; }
-.letter-paper::before { content: ""; position: absolute; top: -13px; left: calc(50% - 65px); width: 130px; height: 25px; background-color: #e6b1be; background-image: linear-gradient(90deg, #fff6ed55 50%, transparent 50%), linear-gradient(#fff6ed55 50%, transparent 50%); background-size: 12px 12px; opacity: .8; transform: rotate(-3deg); pointer-events: none; }
 .letter-paper::after { content: ""; position: absolute; inset: 10px; border: 1px dashed #ecd5d5; border-radius: 2px; pointer-events: none; }
-.letter-heading { position: relative; margin-bottom: 28px; padding-right: 70px; }
-.letter-stamp { position: absolute; top: 1px; right: -3px; width: 56px; min-height: 67px; display: grid; place-content: center; border: 3px dotted #d7a7b3; outline: 1px solid #efdbd9; outline-offset: 3px; background: #f9e8e9; color: var(--accent); text-align: center; font: 19px/1 var(--hand); transform: rotate(7deg); }
-.letter-heading .eyebrow { font-size: 12px; letter-spacing: .025em; }
-.letter-heading h2 { margin-top: 13px; font-size: 47px; line-height: 1.25; font-family: var(--hand); color: var(--accent); }
-.letter-heading h2:focus { outline: none; }
-.letter-heading-rule { display: block; color: var(--accent-soft); font-family: var(--serif); font-size: 24px; line-height: 1; margin-top: 8px; }
 .letter-content { font-family: var(--chinese); font-size: 17px; line-height: 2.05; font-weight: 400; letter-spacing: .025em; overflow-wrap: break-word; line-break: strict; }
 .letter-content p + p { margin-top: 24px; }
+#letter-title:focus { outline: none; }
 .letter-content .letter-signature { margin-top: 39px; color: var(--accent); font-size: 19px; }
-.ending { padding: 70px 0 56px; text-align: center; }
-.ending-bow { display: block; width: 85px; height: auto; margin: 0 auto 20px; }
-.ending .eyebrow { font-size: 13px; letter-spacing: .035em; text-wrap: balance; }
-.ending h2 { margin-top: 24px; font-family: var(--hand); font-size: clamp(57px, 8vw, 85px); line-height: 1.1; letter-spacing: -.03em; }
-.ending h2 em { font-weight: 400; color: var(--accent); }
-.ending-subtitle { margin-top: 20px; color: var(--muted); font-family: var(--serif); font-size: 16px; line-height: 1.6; }
-.ending-signoff { margin-top: 24px; font-family: var(--hand); font-size: 25px; color: var(--accent); }
-.back-to-start { display: inline-flex; gap: 10px; align-items: center; min-height: 44px; margin-top: 34px; font-size: 12px; color: var(--muted); text-decoration: none; }
-.back-to-start:hover { color: var(--accent); }
 
 @media (min-width: 600px) {
   :root { --masthead-height: 80px; --footer-height: 60px; }
@@ -175,18 +150,11 @@ svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.5; stroke
   .section-description { font-size: 14px; }
   .film-caption { font-size: 18px; }
   .film-caption > :last-child { font-size: 10px; }
-  .envelope-scene { padding-top: 36px; }
   .envelope-button { width: 360px; }
-  .envelope-note { font-size: 14px; }
   .letter-reading { padding-top: 44px; }
   .letter-paper { padding: 56px 64px 63px; }
-  .letter-heading { margin-bottom: 34px; }
-  .letter-heading .eyebrow { font-size: 13px; }
-  .letter-heading h2 { font-size: 55px; }
-  .letter-stamp { width: 66px; min-height: 80px; font-size: 23px; }
   .letter-content { font-size: 18px; line-height: 2.1; }
   .letter-content p + p { margin-top: 28px; }
-  .ending { padding-top: 86px; padding-bottom: 70px; }
 }
 @media (max-width: 359px) {
   .masthead { gap: 10px; }
@@ -200,8 +168,6 @@ svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.5; stroke
   .opening-message { font-size: 14px; }
   .tape-left, .tape-right { width: 84px; }
   .letter-paper { padding-inline: 23px; }
-  .letter-heading h2 { font-size: 42px; }
-  .envelope-title { font-size: 29px; }
   .envelope-seal { width: 46px; height: 46px; font-size: 32px; }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -211,13 +177,11 @@ svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.5; stroke
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 @media print {
   body { background: white; color: black; }
-  .masthead, .opening, .film-page, .envelope-scene, .site-footer, .back-to-start, .skip-link { display: none !important; }
+  .masthead, .opening, .film-page, .envelope-scene, .site-footer, .skip-link { display: none !important; }
   .letter-reading[hidden] { display: block !important; }
   .letter-section { width: 100%; max-width: none; }
   .letter-paper { background: white; border: none; box-shadow: none; padding: 20px; }
-  .letter-paper::before, .letter-paper::after, .letter-stamp { display: none; }
+  .letter-paper::after { display: none; }
   .letter-content { font-size: 12pt; line-height: 1.8; }
   .letter-content p { orphans: 3; widows: 3; }
-  .ending { padding: 40px 0 0; break-inside: avoid; }
-  .ending h2 { font-size: 38pt; }
 }

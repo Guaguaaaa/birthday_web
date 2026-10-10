@@ -34,7 +34,7 @@ assets/
 
 Edit the letter between `LOVE LETTER START` and `LOVE LETTER END` in `letter.html`. Keep each paragraph inside its own `<p>`. The latest supplied letter is preserved across all 21 paragraphs, including punctuation, the line break, and emoji. Greetings and captions are in their respective HTML pages; the message shown after playback is in `script.js`.
 
-The greeting CTA opens `memories.html`. When the film ends, a button appears to open `letter.html`; there is no automatic navigation. A quiet link lets the reader continue before the film ends if needed. On the letter page, clicking the envelope lifts the flap and slides out the paper before revealing the letter. Reduced motion opens it immediately. Without JavaScript, the film keeps a working letter link and the letter is directly readable. `letter.html#letter` also opens directly to the text.
+The greeting CTA (“点这里”) opens `memories.html`. The portrait film uses a larger frame. When it ends, “还有些心里话想对你说 ♡” becomes a link to `letter.html`; there is no automatic navigation or separate letter button. The letter page shows only a clickable envelope. Clicking it lifts the flap and slides out the paper before revealing the exact letter, without extra headings, navigation, or an ending section. Reduced motion opens it immediately. Without JavaScript, the film keeps a working letter link and the letter is directly readable. `letter.html#letter` also opens directly to the text.
 
 Colors and font stacks are at the top of `style.css`. Fonts are local system fonts: Snell Roundhand/Apple Chancery/cursive for handwritten details, Iowan Old Style/Baskerville/Georgia for English, and Songti SC with readable Chinese fallbacks. Available handwriting fonts vary by device. The site never requests a font from another server. The gingham and paper tape are CSS; the ribbon and hearts are small SVG illustrations.
 
@@ -110,7 +110,7 @@ Keep the tag rewritable while reviewing the website. There is no need to permane
 
 - Watch the real film with sound on an iPhone, including on a mobile connection. Confirm its orientation, poster, and ability to seek.
 - Read the complete letter and verify the wording. Adjust system text size or zoom to confirm comfortable reading.
-- Confirm the greeting CTA opens the film, the film offers the letter when it ends, the envelope opens on tap or keyboard activation, and the ending appears below the letter.
+- Confirm the greeting CTA opens the film, the film offers the letter when it ends, and the envelope opens on tap or keyboard activation.
 - Test the final NFC tag in the finished physical card.
 
 The page supports keyboard navigation, visible focus, reduced motion, and reading without JavaScript. It also provides a clean print layout for the letter. Browser checks on a desktop do not replace a final test with the actual video on an iPhone.

@@ -11,20 +11,17 @@
     const status = document.getElementById("film-status");
     const playbackHelp = document.getElementById("playback-help");
     const next = document.getElementById("film-next");
-    const skip = document.getElementById("skip-film");
     const invitation = document.querySelector(".film-invitation");
     const note = document.getElementById("film-next-note");
     let filmWasAvailable = false;
     let filmFinished = false;
 
     next.hidden = true;
-    skip.hidden = false;
 
     const offerLetter = () => {
       next.hidden = false;
-      skip.hidden = true;
+      note.hidden = true;
       invitation.classList.add("is-ready");
-      note.textContent = "电影放完啦，还有些心里话想对你说 ♡";
       // The reader chooses the next page. Never redirect on video end.
     };
 
@@ -37,7 +34,7 @@
       // Recover gracefully if an early loading error is followed by metadata.
       if (!filmFinished) {
         next.hidden = true;
-        skip.hidden = false;
+        note.hidden = false;
         invitation.classList.remove("is-ready");
         note.textContent = "按下播放，慢慢看我们的故事。";
       }
