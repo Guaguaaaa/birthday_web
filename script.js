@@ -24,7 +24,7 @@
       next.hidden = false;
       skip.hidden = true;
       invitation.classList.add("is-ready");
-      note.textContent = "There’s something more I want to tell you…";
+      note.textContent = "电影放完啦，还有些心里话想对你说 ♡";
       // The reader chooses the next page. Never redirect on video end.
     };
 
@@ -39,7 +39,7 @@
         next.hidden = true;
         skip.hidden = false;
         invitation.classList.remove("is-ready");
-        note.textContent = "Press play. Take your time.";
+        note.textContent = "按下播放，慢慢看我们的故事。";
       }
       const ratio = video.videoWidth / video.videoHeight;
       shell.style.setProperty("--film-ratio", String(ratio));
@@ -108,7 +108,7 @@
       opening = true;
       envelope.disabled = true;
       envelope.setAttribute("aria-expanded", "true");
-      status.textContent = "Opening your letter…";
+      status.textContent = "正在打开给你的小情书……";
       envelope.classList.add("is-opening");
       if (reducedMotion.matches) showLetter(true);
       else openingTimer = window.setTimeout(() => showLetter(true), 1050);

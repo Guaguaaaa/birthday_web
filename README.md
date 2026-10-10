@@ -1,6 +1,6 @@
 # Happily Ever After
 
-A small birthday keepsake in three separate pages: a greeting, a memory film, and a sealed personal letter. Warm ivory paper and burgundy accents. Built with HTML, CSS, and vanilla JavaScript. No installation, build step, remote fonts, analytics, or third-party embeds.
+A small birthday keepsake in three separate pages: a greeting, a memory film, and a sealed personal letter. Cream paper, soft pink gingham, burgundy ribbons, and hand-drawn hearts make it feel like a handmade birthday gift. Built with HTML, CSS, and vanilla JavaScript. No installation, build step, remote fonts, analytics, or third-party embeds.
 
 ## Preview locally
 
@@ -23,6 +23,7 @@ letter.html         An interactive envelope and the exact original love letter
 style.css           Responsive layout, typography, colors, and reduced motion
 script.js           Video fallback and reader-controlled letter reveal
 assets/
+  bow.svg           A small hand-drawn burgundy ribbon
   cover.svg         Included, lightweight burgundy fallback cover
   poster.svg        Typographic video poster before a personal JPEG is added
   favicon.svg       Small typographic favicon
@@ -31,11 +32,11 @@ assets/
 .nojekyll           Serves the site as plain static files on GitHub Pages
 ```
 
-Edit the letter between `LOVE LETTER START` and `LOVE LETTER END` in `letter.html`. Keep each paragraph inside its own `<p>`. The wording supplied in the brief is preserved, including punctuation, English, and emoji. Greetings and captions are in their respective HTML pages; the message shown after playback is in `script.js`.
+Edit the letter between `LOVE LETTER START` and `LOVE LETTER END` in `letter.html`. Keep each paragraph inside its own `<p>`. The latest supplied letter is preserved across all 21 paragraphs, including punctuation, the line break, and emoji. Greetings and captions are in their respective HTML pages; the message shown after playback is in `script.js`.
 
 The greeting CTA opens `memories.html`. When the film ends, a button appears to open `letter.html`; there is no automatic navigation. A quiet link lets the reader continue before the film ends if needed. On the letter page, clicking the envelope lifts the flap and slides out the paper before revealing the letter. Reduced motion opens it immediately. Without JavaScript, the film keeps a working letter link and the letter is directly readable. `letter.html#letter` also opens directly to the text.
 
-Colors and font stacks are at the top of `style.css`. Fonts are local system fonts: Iowan Old Style/Baskerville/Georgia for English, and Songti SC with readable Chinese fallbacks. The site never requests a font from another server.
+Colors and font stacks are at the top of `style.css`. Fonts are local system fonts: Snell Roundhand/Apple Chancery/cursive for handwritten details, Iowan Old Style/Baskerville/Georgia for English, and Songti SC with readable Chinese fallbacks. Available handwriting fonts vary by device. The site never requests a font from another server. The gingham and paper tape are CSS; the ribbon and hearts are small SVG illustrations.
 
 ## Add or replace the video
 
